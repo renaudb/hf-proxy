@@ -1,8 +1,8 @@
 # -------------------------------
-# MapProxy example configuration.
+# hf-proxy MapProxy configuration.
 # -------------------------------
 #
-# This is a minimal MapProxy configuration.
+# Caches and proxies WMS/WMTS layers from Quebec government geodata services.
 # See full_example.yaml and the documentation for more options.
 #
 
