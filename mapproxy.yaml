@@ -12,14 +12,14 @@
 # WMTS:
 #     capabilities: http://localhost:8080/wmts/1.0.0/WMTSCapabilities.xml
 #     first tile: http://localhost:8080/wmts/qc_imagerie/webmercator/0/0/0.jpeg
-#     first tile: http://localhost:8080/wmts/qc_chasse_da3_sefaq/webmercator/0/0/0.png
+#     first tile: http://localhost:8080/wmts/qc_zone_chasse/webmercator/0/0/0.png
 # Tile service (compatible with OSM/etc.)
 #     first tile: http://localhost:8080/tiles/qc_imagerie/webmercator/0/0/0.jpeg
-#     first tile: http://localhost:8080/tiles/qc_chasse_da3_sefaq/webmercator/0/0/0.png
+#     first tile: http://localhost:8080/tiles/qc_zone_chasse/webmercator/0/0/0.png
 # TMS:
 #     note: TMS is not compatible with OSM/Google Maps/etc.
 #     first tile: http://localhost:8080/tms/1.0.0/qc_imagerie/webmercator/0/0/0.jpeg
-#     first tile: http://localhost:8080/tms/1.0.0/qc_chasse_da3_sefaq/webmercator/0/0/0.png
+#     first tile: http://localhost:8080/tms/1.0.0/qc_zone_chasse/webmercator/0/0/0.png
 
 services:
   demo:
@@ -33,26 +33,26 @@ layers:
   - name: qc_imagerie
     title: Imagerie Continue Quebec (MERN)
     sources: [qc_imagerie_cache]
-  - name: qc_chasse_da3_sefaq
+  - name: qc_zone_chasse
     title: Zone de chasse DA3 - SEFAQ (MERN SmartFaune)
-    sources: [qc_chasse_da3_sefaq_cache]
+    sources: [qc_zone_chasse_cache]
 
 caches:
   qc_imagerie_cache:
     grids: [webmercator]
     format: image/jpeg
     sources: [qc_imagerie_wmts]
-  qc_chasse_da3_sefaq_cache:
+  qc_zone_chasse_cache:
     grids: [webmercator]
     format: image/png
-    sources: [qc_chasse_da3_sefaq_wms]
+    sources: [qc_zone_chasse_wms]
 
 sources:
   qc_imagerie_wmts:
     type: tile
     grid: webmercator
     url: https://servicesmatriciels.mern.gouv.qc.ca/erdas-iws/ogc/wmts/Imagerie_Continue?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=Imagerie_GQ&STYLE=default&TILEMATRIXSET=GoogleMapsCompatibleExt2%%3Aepsg%%3A3857&FORMAT=image%%2Fjpeg&TILEMATRIX=%(z)s&TILEROW=%(y)s&TILECOL=%(x)s
-  qc_chasse_da3_sefaq_wms:
+  qc_zone_chasse_wms:
     type: wms
     wms_opts:
       version: '1.3.0'
