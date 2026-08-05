@@ -6,4 +6,8 @@
 # See full_seed_example.yaml and the documentation for more options.
 #
 
+seeds:
+
+cleanups:
+
 coverages:
