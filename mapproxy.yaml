@@ -13,16 +13,16 @@
 #     capabilities: http://localhost:8080/wmts/1.0.0/WMTSCapabilities.xml
 #     first tile: http://localhost:8080/wmts/qc_imagerie/webmercator/0/0/0.jpeg
 #     first tile: http://localhost:8080/wmts/qc_zone_chasse/webmercator/0/0/0.png
-#     first tile: http://localhost:8080/wmts/qc_territoire_faunique/webmercator/0/0/0.png
+#     first tile: http://localhost:8080/wmts/qc_territoires_faunique/webmercator/0/0/0.png
 # Tile service (compatible with OSM/etc.)
 #     first tile: http://localhost:8080/tiles/qc_imagerie/webmercator/0/0/0.jpeg
 #     first tile: http://localhost:8080/tiles/qc_zone_chasse/webmercator/0/0/0.png
-#     first tile: http://localhost:8080/tiles/qc_territoire_faunique/webmercator/0/0/0.png
+#     first tile: http://localhost:8080/tiles/qc_territoires_faunique/webmercator/0/0/0.png
 # TMS:
 #     note: TMS is not compatible with OSM/Google Maps/etc.
 #     first tile: http://localhost:8080/tms/1.0.0/qc_imagerie/webmercator/0/0/0.jpeg
 #     first tile: http://localhost:8080/tms/1.0.0/qc_zone_chasse/webmercator/0/0/0.png
-#     first tile: http://localhost:8080/tms/1.0.0/qc_territoire_faunique/webmercator/0/0/0.png
+#     first tile: http://localhost:8080/tms/1.0.0/qc_territoires_faunique/webmercator/0/0/0.png
 
 services:
   demo:
@@ -39,9 +39,9 @@ layers:
   - name: qc_zone_chasse
     title: Zone de chasse DA3 - SEFAQ (MERN SmartFaune)
     sources: [qc_zone_chasse_cache]
-  - name: qc_territoire_faunique
+  - name: qc_territoires_faunique
     title: Territoires fauniques structurés (MERN SmartFaune)
-    sources: [qc_territoire_faunique_cache]
+    sources: [qc_territoires_faunique_cache]
 
 caches:
   qc_imagerie_cache:
@@ -52,10 +52,10 @@ caches:
     grids: [webmercator]
     format: image/png
     sources: [qc_zone_chasse_wms]
-  qc_territoire_faunique_cache:
+  qc_territoires_faunique_cache:
     grids: [webmercator]
     format: image/png
-    sources: [qc_territoire_faunique_wms]
+    sources: [qc_territoires_faunique_wms]
 
 sources:
   qc_imagerie_wmts:
@@ -70,7 +70,7 @@ sources:
       url: https://servicesvecto3.mern.gouv.qc.ca/geoserver/SmartFaunePub/ows?
       layers: Zone_chasse_da3_sefaq
       transparent: true
-  qc_territoire_faunique_wms:
+  qc_territoires_faunique_wms:
     type: wms
     wms_opts:
       version: '1.3.0'
