@@ -40,11 +40,18 @@ layers:
   - name: osm
     title: OSM
     sources: [osm_cache]
+  - name: qc_imagerie
+    title: Imagerie Continue Quebec (MERN)
+    sources: [qc_imagerie_cache]
 
 caches:
   osm_cache:
     grids: [webmercator]
     sources: [osm_wms]
+  qc_imagerie_cache:
+    grids: [webmercator]
+    format: image/jpeg
+    sources: [qc_imagerie_wmts]
 
 sources:
   osm_wms:
@@ -52,6 +59,10 @@ sources:
     req:
       url: http://${server}/service?
       layers: $layer
+  qc_imagerie_wmts:
+    type: tile
+    grid: webmercator
+    url: https://servicesmatriciels.mern.gouv.qc.ca/erdas-iws/ogc/wmts/Imagerie_Continue?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=Imagerie_GQ&STYLE=default&TILEMATRIXSET=GoogleMapsCompatibleExt2%%3Aepsg%%3A3857&FORMAT=image%%2Fjpeg&TILEMATRIX=%(z)s&TILEROW=%(y)s&TILECOL=%(x)s
 
 grids:
     webmercator:
