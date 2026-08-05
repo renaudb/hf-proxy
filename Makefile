@@ -1,4 +1,4 @@
 .PHONY: test-server
 
 test-server:
-	uv run mapproxy-util serve-develop mapproxy.yaml
+	SSL_CERT_FILE=$$(uv run python -c "import certifi; print(certifi.where())") uv run mapproxy-util serve-develop mapproxy.yaml
