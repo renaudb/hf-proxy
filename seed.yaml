@@ -1,8 +1,8 @@
 # ---------------------------------------
-# MapProxy example seeding configuration.
+# hf-proxy MapProxy seeding configuration.
 # ---------------------------------------
 #
-# This is a minimal MapProxy seeding configuration.
+# Defines cache seeding and cleanup schedules for hf-proxy.
 # See full_seed_example.yaml and the documentation for more options.
 #
 
