@@ -7,4 +7,8 @@ build:
 	docker build --platform linux/amd64 -t hf-proxy-mapproxy .
 
 run:
-	docker run --rm --platform linux/amd64 -p 8080:80 -v $$(pwd)/cache_data:/mapproxy/config/cache_data hf-proxy-mapproxy
+	docker run --rm --platform linux/amd64 -p 8080:80 \
+		-v $$(pwd)/cache_data:/mapproxy/config/cache_data \
+		-v $$(pwd)/locks:/mapproxy/config/locks \
+		-v $$(pwd)/tile_locks:/mapproxy/config/tile_locks \
+		hf-proxy-mapproxy
