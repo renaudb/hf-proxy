@@ -18,7 +18,6 @@
 #     first tile: http://localhost:8080/wmts/qc_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/wmts/qc_ecoforestier/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/wmts/qc_imagerie_courbes_niveau/webmercator/0/0/0.jpeg
-#     first tile: http://localhost:8080/wmts/qc_ecoforestier_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/wmts/qc_chasse/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/wmts/qc_baux/webmercator/0/0/0.png
 # Tile service (compatible with OSM/etc.)
@@ -29,7 +28,6 @@
 #     first tile: http://localhost:8080/tiles/qc_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tiles/qc_ecoforestier/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tiles/qc_imagerie_courbes_niveau/webmercator/0/0/0.jpeg
-#     first tile: http://localhost:8080/tiles/qc_ecoforestier_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tiles/qc_chasse/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tiles/qc_baux/webmercator/0/0/0.png
 # TMS:
@@ -41,7 +39,6 @@
 #     first tile: http://localhost:8080/tms/1.0.0/qc_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tms/1.0.0/qc_ecoforestier/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tms/1.0.0/qc_imagerie_courbes_niveau/webmercator/0/0/0.jpeg
-#     first tile: http://localhost:8080/tms/1.0.0/qc_ecoforestier_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tms/1.0.0/qc_chasse/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tms/1.0.0/qc_baux/webmercator/0/0/0.png
 
@@ -75,9 +72,6 @@ layers:
   - name: qc_imagerie_courbes_niveau
     title: Imagerie Continue + Courbes de niveau 10m (MERN/MFFP)
     sources: [qc_imagerie_courbes_niveau_cache]
-  - name: qc_ecoforestier_courbes_niveau
-    title: Peuplements écoforestiers + Courbes de niveau 10m (MFFP Ecoforestier)
-    sources: [qc_ecoforestier_courbes_niveau_cache]
   - name: qc_chasse
     title: Zone de chasse + Chasse interdite + Territoires fauniques (MERN SmartFaune)
     sources: [qc_chasse_cache]
@@ -114,10 +108,6 @@ caches:
     grids: [webmercator]
     format: image/jpeg
     sources: [qc_imagerie_cache, qc_courbes_niveau_cache]
-  qc_ecoforestier_courbes_niveau_cache:
-    grids: [webmercator]
-    format: image/png
-    sources: [qc_ecoforestier_cache, qc_courbes_niveau_cache]
   qc_chasse_cache:
     grids: [webmercator]
     format: image/png
