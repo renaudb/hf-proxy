@@ -171,6 +171,7 @@ sources:
     req:
       url: https://geoegl.msp.gouv.qc.ca/ws/mffpecofor.fcgi?
       layers: ori_pee_close_scale
+      styles: Couleur_avec_etiquette
       transparent: true
   qc_baux_wms:
     type: wms
