@@ -17,7 +17,7 @@
 #     first tile: http://localhost:8080/wmts/qc_territoires_faunique/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/wmts/qc_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/wmts/qc_ecoforestier/webmercator/0/0/0.png
-#     first tile: http://localhost:8080/wmts/qc_imagerie_courbes_niveau/webmercator/0/0/0.jpeg
+#     first tile: http://localhost:8080/wmts/qc_hybride/webmercator/0/0/0.jpeg
 #     first tile: http://localhost:8080/wmts/qc_chasse/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/wmts/qc_baux/webmercator/0/0/0.png
 # Tile service (compatible with OSM/etc.)
@@ -27,7 +27,7 @@
 #     first tile: http://localhost:8080/tiles/qc_territoires_faunique/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tiles/qc_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tiles/qc_ecoforestier/webmercator/0/0/0.png
-#     first tile: http://localhost:8080/tiles/qc_imagerie_courbes_niveau/webmercator/0/0/0.jpeg
+#     first tile: http://localhost:8080/tiles/qc_hybride/webmercator/0/0/0.jpeg
 #     first tile: http://localhost:8080/tiles/qc_chasse/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tiles/qc_baux/webmercator/0/0/0.png
 # TMS:
@@ -38,7 +38,7 @@
 #     first tile: http://localhost:8080/tms/1.0.0/qc_territoires_faunique/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tms/1.0.0/qc_courbes_niveau/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tms/1.0.0/qc_ecoforestier/webmercator/0/0/0.png
-#     first tile: http://localhost:8080/tms/1.0.0/qc_imagerie_courbes_niveau/webmercator/0/0/0.jpeg
+#     first tile: http://localhost:8080/tms/1.0.0/qc_hybride/webmercator/0/0/0.jpeg
 #     first tile: http://localhost:8080/tms/1.0.0/qc_chasse/webmercator/0/0/0.png
 #     first tile: http://localhost:8080/tms/1.0.0/qc_baux/webmercator/0/0/0.png
 
@@ -52,31 +52,31 @@ services:
 
 layers:
   - name: qc_imagerie
-    title: Imagerie Continue Quebec (MERN)
+    title: QC Imagerie
     sources: [qc_imagerie_cache]
   - name: qc_zone_chasse
-    title: Zone de chasse DA3 - SEFAQ (MERN SmartFaune)
+    title: QC Zone Chasse
     sources: [qc_zone_chasse_cache]
   - name: qc_chasse_interdite
-    title: Chasse Interdite (MERN SmartFaune)
+    title: QC Chasse Interdite
     sources: [qc_chasse_interdite_cache]
   - name: qc_territoires_faunique
-    title: Territoires fauniques structurés (MERN SmartFaune)
+    title: QC Territoires Faunique
     sources: [qc_territoires_faunique_cache]
   - name: qc_courbes_niveau
-    title: Courbes de niveau 10m (MFFP Ecoforestier)
+    title: QC Courbes Niveau
     sources: [qc_courbes_niveau_cache]
   - name: qc_ecoforestier
-    title: Peuplements écoforestiers (MFFP Ecoforestier)
+    title: QC Ecoforestier
     sources: [qc_ecoforestier_cache]
-  - name: qc_imagerie_courbes_niveau
-    title: Imagerie Continue + Courbes de niveau 10m (MERN/MFFP)
-    sources: [qc_imagerie_courbes_niveau_cache]
+  - name: qc_hybride
+    title: QC Hybride
+    sources: [qc_hybride_cache]
   - name: qc_chasse
-    title: Zone de chasse + Chasse interdite + Territoires fauniques (MERN SmartFaune)
+    title: QC Chasse
     sources: [qc_chasse_cache]
   - name: qc_baux
-    title: Baux (Droits fonciers - MRNF)
+    title: QC Baux
     sources: [qc_baux_cache]
 
 caches:
@@ -104,7 +104,7 @@ caches:
     grids: [webmercator]
     format: image/png
     sources: [qc_ecoforestier_wms]
-  qc_imagerie_courbes_niveau_cache:
+  qc_hybride_cache:
     grids: [webmercator]
     format: image/jpeg
     sources: [qc_imagerie_cache, qc_courbes_niveau_cache]
