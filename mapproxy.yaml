@@ -121,6 +121,8 @@ caches:
   qc_chasse_cache:
     grids: [webmercator]
     format: image/png
+    image:
+      transparent: true
     sources: [qc_zone_chasse_cache, qc_chasse_interdite_cache, qc_territoires_faunique_cache]
   qc_baux_cache:
     grids: [webmercator]
