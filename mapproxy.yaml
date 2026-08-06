@@ -186,3 +186,6 @@ grids:
         base: GLOBAL_WEBMERCATOR
 
 globals:
+  cache:
+    lock_dir: './locks'
+    tile_lock_dir: './tile_locks'

@@ -6,3 +6,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 COPY mapproxy.yaml /mapproxy/config/mapproxy.yaml
 
 VOLUME /mapproxy/config/cache_data
+VOLUME /mapproxy/config/locks
+VOLUME /mapproxy/config/tile_locks
