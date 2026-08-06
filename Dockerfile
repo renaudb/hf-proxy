@@ -4,6 +4,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && rm -rf /var/lib/apt/lists/*
 
 COPY mapproxy.yaml /mapproxy/config/mapproxy.yaml
+COPY log.ini /mapproxy/config/log.ini
+COPY app.py /mapproxy/app.py
 
 VOLUME /mapproxy/config/cache_data
 VOLUME /mapproxy/config/locks
